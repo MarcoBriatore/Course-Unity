@@ -24,11 +24,13 @@ public class Player : MonoBehaviour
     public void IncreaseHealth(float amount)
     {
         this.health += Math.Abs(amount);
+        Debug.Assert(this.health > 0);
     }
 
     public void DecreaseHealth(float damage)
     {
-        this.health -= -Math.Abs(damage);
+        this.health -= Math.Abs(damage);
+        Debug.Assert(this.health > 0);
     }
 
     public void Movement()
